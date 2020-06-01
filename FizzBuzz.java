@@ -1,8 +1,14 @@
 package FizzBuzz;
 
-public class FizzBuzz {
-    public void execute() {
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
+public class FizzBuzz {
+    public String execute(int[] numbers) {
+        // Creating a sequence from each member of our array, passing it as a parameter
+        // of our processNumber() and then collect the output and join them together
+        // seperated by a comma
+        return Arrays.stream(numbers).mapToObj(this::processNumber).collect(Collectors.joining(", "));
     }
 
     public String processNumber(int number) {
